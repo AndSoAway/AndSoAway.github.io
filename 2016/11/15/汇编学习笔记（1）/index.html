@@ -28,7 +28,7 @@
 
 
 .global _start 定义符号。_start是一个特殊符号，代表着程序开始的入口。符号供链接">
-<meta property="og:updated_time" content="2016-11-15T07:04:42.000Z">
+<meta property="og:updated_time" content="2016-11-15T13:02:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="汇编学习笔记（1）">
 <meta name="twitter:description" content="基本知识
@@ -216,7 +216,16 @@
 <li>循环就是跳转的应用，条件跳转跳出循环，无条件跳转跳到循环开始处。</li>
 </ol>
 </li>
-<li>movl data_items(, %edi, 4), %eax  //这里用了索引寻址的方式， movl 起始地址(, %索引寄存器, 字长) 表示从起始地址开始， 加上％索引寄存器 ＊ 字长的位置，提取数字。</li>
+<li><p>movl data_items(, %edi, 4), %eax  //这里用了索引寻址的方式， movl 起始地址(, %索引寄存器, 字长) 表示从起始地址开始， 加上％索引寄存器 ＊ 字长的位置，提取数字。  </p>
+<h4 id="寻址方式"><a href="#寻址方式" class="headerlink" title="寻址方式"></a>寻址方式</h4></li>
+<li><p>内存地址引用通用格式： 地址或偏移 (％基址寄存器，％索引寄存器， 比例因子)    结果地址 ＝ 地址或偏移 ＋ ％基址或偏移量寄存器 ＋ 比例因子 ＊ ％索引寄存器</p>
+</li>
+<li>直接寻址 movl ADDRESS, %eax</li>
+<li>立即寻址 movl $1, %eax</li>
+<li>索引寻址 movl string_start(, %ecs, 1), %eax</li>
+<li>间接寻址 movl (%eax), %ebx</li>
+<li>基址寻址 movl 4(%eax), %ebx</li>
+<li>寄存器寻址  就是将数据移入或者移出寄存器 </li>
 </ol>
 
       
