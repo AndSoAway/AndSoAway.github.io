@@ -174,7 +174,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <a id="more"></a>
+<h4 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h4><ol>
+<li>不同的系统有不同的汇编语法。 在Linux系统下，可以使用as命令来编译会变程序。</li>
+<li>.section 命令将程序分段。    <ul>
+<li>.section .data 定义数据段</li>
+<li>.section .text 定义文本段, 存放指令。</li>
+</ul>
+</li>
+<li>.global _start 定义符号。_start是一个特殊符号，代表着程序开始的入口。符号供链接器使用。</li>
+<li>两个操作数的指令，源操作数一般不会改变。当然，有些特殊命令会。</li>
+<li>进行系统调用时，要提前将系统调用号加载到 %eax, 参数放到其它的寄存器中。 $1 是系统调用exit的系统调用号。</li>
+<li>int $0x80 //该命令将通知内核进行终端，使用系统调用。int代表中断。</li>
+</ol>
+
       
     </div>
     <div class="article-info article-info-index">
@@ -183,7 +196,17 @@
   	<time datetime="2016-11-15T02:58:37.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-15</time>
 </a>
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/汇编/">汇编</a></li></ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/技术/">技术</a>
+	</div>
+
 
       <div class="clearfix"></div>
     </div>
@@ -742,7 +765,7 @@
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/LeetCode/" style="font-size: 10px;">LeetCode</a> <a href="/tags/Leetcode/" style="font-size: 10px;">Leetcode</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/U盘/" style="font-size: 10px;">U盘</a> <a href="/tags/tree/" style="font-size: 10px;">tree</a> <a href="/tags/写作/" style="font-size: 10px;">写作</a>
+    				<a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/LeetCode/" style="font-size: 10px;">LeetCode</a> <a href="/tags/Leetcode/" style="font-size: 10px;">Leetcode</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/U盘/" style="font-size: 10px;">U盘</a> <a href="/tags/tree/" style="font-size: 10px;">tree</a> <a href="/tags/写作/" style="font-size: 10px;">写作</a> <a href="/tags/汇编/" style="font-size: 10px;">汇编</a>
     			</div>
     	</section>
     
