@@ -174,9 +174,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<p>有些人，我曾经认为很理解他们。<br>有些人是熟识多年的好友，我们一起成长，一起欢笑，看着彼此的情绪跌宕起落。<br>有些人是共同走过的死党，旅游，吃饭，逛街，总是第一时间想到他。<br>有些人占据了手机上的内存空间。或者是我们的家人，或者是我们的同学。照片里的脸孔总是有那几张。<br>我理解他们么？我当然理解吧。我可以模仿他们的口音，讲述他们的窘事，回味他们的曾经。<br>当他做出一个表情，我不用听下面的话语，就知道“哦，好吧”。<br>当她只露出的身影，我就能若有所思的空気読み，担心哪里不对。<br>但是，有时候我也会问，“你现在的生活你喜欢嘛？”，“你干嘛不去做XX啊”。<br>对方给一个白眼，切的一声，留下我一脸的疑惑。<br>我们好像常常忽略了身边人，或者说，失去了熟识他们的动机与能力。<br>哎，对不起，我没办法完全理解你，只希望能够慢慢的陪着你吧。<br>从小到大都是一个恋旧的人，真的感觉，是不是熟人社会的生活方式更适合自己呢？从小到老的发小，从幼时就养成的思维习惯。<br>但生活就是如此吧。不停的切换游戏场景。<br>希望能永远留一份耐心和精力给身边的人。<br>也希望能被托付一点点包容和耐烦。<br>あの日見た花の名前を僕達はまだ知らない。<br>很喜欢这句话，虽然从来没看过这部剧。</p>
-
+        <p>有些人，我曾经认为很理解他们。  </p>
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2016/11/18/我们也许永远都未曾理解好朋友的内心/#more">more >></a>
+        </p>
       
     </div>
     <div class="article-info article-info-index">
@@ -225,37 +226,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<h4 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h4><ol>
+        <h4 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h4><ol>
 <li>不同的系统有不同的汇编语法。 在Linux系统下，可以使用as命令来编译会变程序。</li>
-<li>任何以小数点开头的单词表示一个指令 如 .section</li>
-<li>.section 命令将程序分段。    <ul>
-<li>.section .data 定义数据段</li>
-<li>.section .text 定义文本段, 存放指令。</li>
-</ul>
-</li>
-<li>.global _start 定义符号。_start是一个特殊符号，代表着程序开始的入口。符号供链接器使用。</li>
-<li>_start: 这样表示开始定义一个标签</li>
-<li>两个操作数的指令，源操作数一般不会改变。当然，有些特殊命令会。</li>
-<li>进行系统调用时，要提前将系统调用号加载到 %eax, 参数放到其它的寄存器中。 $1 是系统调用exit的系统调用号。而exit退出的参数就放在%ebx中。</li>
-<li>int $0x80 //该命令将通知内核进行终端，使用系统调用。int代表中断。</li>
-<li>流程控制包括跳转和循环：<ol>
-<li>跳转包括条件跳转和无条件跳转，前者对应if判断，后者对应break跳出。</li>
-<li>循环就是跳转的应用，条件跳转跳出循环，无条件跳转跳到循环开始处。</li>
 </ol>
-</li>
-<li><p>movl data_items(, %edi, 4), %eax  //这里用了索引寻址的方式， movl 起始地址(, %索引寄存器, 字长) 表示从起始地址开始， 加上％索引寄存器 ＊ 字长的位置，提取数字。  </p>
-<h4 id="寻址方式"><a href="#寻址方式" class="headerlink" title="寻址方式"></a>寻址方式</h4></li>
-<li><p>内存地址引用通用格式： 地址或偏移 (％基址寄存器，％索引寄存器， 比例因子)    结果地址 ＝ 地址或偏移 ＋ ％基址或偏移量寄存器 ＋ 比例因子 ＊ ％索引寄存器</p>
-</li>
-<li>直接寻址 movl ADDRESS, %eax</li>
-<li>立即寻址 movl $1, %eax</li>
-<li>索引寻址 movl string_start(, %ecs, 1), %eax</li>
-<li>间接寻址 movl (%eax), %ebx</li>
-<li>基址寻址 movl 4(%eax), %ebx</li>
-<li>寄存器寻址  就是将数据移入或者移出寄存器 </li>
-</ol>
-
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2016/11/15/汇编学习笔记（1）/#more">more >></a>
+        </p>
       
     </div>
     <div class="article-info article-info-index">
