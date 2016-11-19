@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Archives | 渊薮</title>
+  <title>数据挖掘项目.md | 渊薮</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录自己的学习历程">
-<meta property="og:type" content="website">
-<meta property="og:title" content="渊薮">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+  <meta name="description" content="接手SLB项目，发现自己以前对数据挖掘的东西了解太少了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据挖掘项目.md">
+<meta property="og:url" content="http://yoursite.com/2016/11/19/数据挖掘项目-md/index.html">
 <meta property="og:site_name" content="渊薮">
-<meta property="og:description" content="记录自己的学习历程">
+<meta property="og:description" content="接手SLB项目，发现自己以前对数据挖掘的东西了解太少了。">
+<meta property="og:updated_time" content="2016-11-19T05:56:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="渊薮">
-<meta name="twitter:description" content="记录自己的学习历程">
+<meta name="twitter:title" content="数据挖掘项目.md">
+<meta name="twitter:description" content="接手SLB项目，发现自己以前对数据挖掘的东西了解太少了。">
   
     <link rel="alternative" href="/atom.xml" title="渊薮" type="application/atom+xml">
   
@@ -154,312 +155,118 @@
 </nav>
 
       <div class="body-wrap">
+        <article id="post-数据挖掘项目-md" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
         
   
+    <h1 class="article-title" itemprop="name">
+      数据挖掘项目.md
+    </h1>
   
+
+      </header>
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>接手SLB项目，发现自己以前对数据挖掘的东西了解太少了。<br><a id="more"></a></p>
+<h3 id="数据归一化"><a href="#数据归一化" class="headerlink" title="数据归一化"></a>数据归一化</h3><ol>
+<li>目的：不同数量级和量纲单位的数据，要进行归一化，来消除指标之间的数量级影响，解决数据之间的可比性。否则会引起：<ul>
+<li>训练时间增大，可能无法收敛</li>
+<li>系数不均匀</li>
+</ul>
+</li>
+<li>min-max标准化，对原始数据的线性变化。 X＊ = (x - min) / (max - min). 将数据映射到0 ～ 1之间。问题是来新的数据超过这个范围呢？</li>
+<li>Z－core标准化方法：对原始数据的均值和标准差进行数据的标准化。X* =   (x - u) / q， 这样是按照正态分布来模拟数据的。</li>
+<li><a href="http://blog.csdn.net/zhanglei041/article/details/19845653" target="_blank" rel="external">更多的方法</a>,这里面介绍了对数，中值，反切函数等方法。</li>
+<li><a href="http://blog.csdn.net/wermnb/article/details/7182477" target="_blank" rel="external">有关Weka的指标介绍</a>，主要的是absolute error和relative error的区别。</li>
+<li><a href="https://www.zhihu.com/question/29316149" target="_blank" rel="external">有关特征工程的一些知识，有时间细细看吧</a></li>
+<li><a href="http://blog.csdn.net/magicchu/article/details/51767409" target="_blank" rel="external">简单讲述了线性回归和特征归一的应用</a></li>
+<li><a href="http://blog.csdn.net/qiao1245/article/details/51005797" target="_blank" rel="external">weka实现SVM算法的教程</a></li>
+</ol>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/11/19/数据挖掘项目-md/" class="archive-article-date">
+  	<time datetime="2016-11-19T02:53:01.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-19</time>
+</a>
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/18/怎么成为技术大牛/" class="archive-article-date">
-  	<time datetime="2016-10-18T12:48:08.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/18/怎么成为技术大牛/">怎么成为技术大牛</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/随笔/">随笔</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/17/U盘显示只有200M/" class="archive-article-date">
-  	<time datetime="2016-10-17T07:45:05.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/17/U盘显示只有200M/">U盘显示只有200M</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/U盘/">U盘</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/随笔/">随笔</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/17/Longest-Repeating-Character-Replacement/" class="archive-article-date">
-  	<time datetime="2016-10-17T01:15:30.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/17/Longest-Repeating-Character-Replacement/">Longest Repeating Character Replacement</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/">Leetcode</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/OJ/">OJ</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/16/Reconstruct-Original-Digits/" class="archive-article-date">
-  	<time datetime="2016-10-16T13:05:40.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/16/Reconstruct-Original-Digits/">Reconstruct Original Digits</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/OJ/">OJ</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/15/Hexo/" class="archive-article-date">
-  	<time datetime="2016-10-15T15:25:21.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/15/Hexo/">Hexo资料汇集</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
-	</div>
-
-          
 	<div class="article-category tagcloud">
 	<i class="icon-price-tags"></i>
 	<a class="article-category-link" href="/categories/技术/">技术</a>
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/15/指针和引用区别/" class="archive-article-date">
-  	<time datetime="2016-10-15T12:20:51.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/15/指针和引用区别/">指针和引用区别</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li></ul>
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2016/11/18/我们也许永远都未曾理解好朋友的内心/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">我们也许永远都未曾理解好朋友的内心</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
-
-          
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/技术/">技术</a>
-	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/15/JobSeeking/" class="archive-article-date">
-  	<time datetime="2016-10-15T12:18:59.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/15/JobSeeking/">JobSeeking</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/随笔/">随笔</a>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/15/hello-world/" class="archive-article-date">
-  	<time datetime="2016-10-15T12:17:12.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/15/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/写作/">写作</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/随笔/">随笔</a>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="数据挖掘项目-md" data-title="数据挖掘项目.md" data-url="http://yoursite.com/2016/11/19/数据挖掘项目-md/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"andsoaway"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
-  
+
+
 
 
       </div>
@@ -482,8 +289,8 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
