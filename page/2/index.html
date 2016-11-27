@@ -156,6 +156,57 @@
       <div class="body-wrap">
         
   
+    <article id="post-Serialize-and-Deserialize-Binary-Tree" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/23/Serialize-and-Deserialize-Binary-Tree/">Serialize and Deserialize Binary Tree</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最常见的是用BFS，用＃来表示NULL。</p>
+<p>但是，实际上用DFS是最方便的。 to_string(root-&gt;val) + “,” + serialize(root-&gt;left) + “,” + serialize(root-&gt;right).<br>然后deserialize的时候，首先得到的是root的val，然后递归得到左子树的，右子树的。因为碰到＃，就可以直接返回NULL了。所以不会陷入不能分解的地步。</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/10/23/Serialize-and-Deserialize-Binary-Tree/" class="archive-article-date">
+  	<time datetime="2016-10-23T14:11:38.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-23</time>
+</a>
+      
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/OJ/">OJ</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-K-th-Smallest-in-Lexicographical-Order" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
