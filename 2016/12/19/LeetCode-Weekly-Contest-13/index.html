@@ -6,16 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>LeetCode Weekly Contest 13 | 渊薮</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录自己的学习历程">
+  <meta name="description" content="Leetcode，本次题目比较简单，第一题位操作，第二题小trick，怎么减少计算，第三题剪枝。第四题用word break思路。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode Weekly Contest 13">
 <meta property="og:url" content="http://yoursite.com/2016/12/19/LeetCode-Weekly-Contest-13/index.html">
 <meta property="og:site_name" content="渊薮">
-<meta property="og:description" content="记录自己的学习历程">
-<meta property="og:updated_time" content="2016-12-19T01:50:07.000Z">
+<meta property="og:description" content="Leetcode，本次题目比较简单，第一题位操作，第二题小trick，怎么减少计算，第三题剪枝。第四题用word break思路。">
+<meta property="og:updated_time" content="2016-12-19T02:35:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode Weekly Contest 13">
-<meta name="twitter:description" content="记录自己的学习历程">
+<meta name="twitter:description" content="Leetcode，本次题目比较简单，第一题位操作，第二题小trick，怎么减少计算，第三题剪枝。第四题用word break思路。">
   
     <link rel="alternative" href="/atom.xml" title="渊薮" type="application/atom+xml">
   
@@ -173,7 +173,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>Leetcode，本次题目比较简单，第一题位操作，第二题小trick，怎么减少计算，第三题剪枝。第四题用word break思路。<br><a id="more"></a></p>
+<h4 id="Hamming-Distance"><a href="#Hamming-Distance" class="headerlink" title="Hamming Distance"></a>Hamming Distance</h4><p>位操作，先用与操作，把位相同的变为0，不同的变为1，然后统计有多少个1.</p>
+<h4 id="Total-Hamming-Distance"><a href="#Total-Hamming-Distance" class="headerlink" title="Total Hamming Distance"></a>Total Hamming Distance</h4><p>给定n个数，任取两个数，计算Hamming Distance，求所有两两组合的和。如果是直接两两组合，那就是O(n^2)<em> 32， 但是我们可以每一位来看，在每一个bit位上，所产生的Hamming Distance实际上是n个数在这个bit位上，1的个数和0的个数的乘积。那么时间复杂度就是32</em>O(n)</p>
+<h4 id="Matchsticks-to-Square"><a href="#Matchsticks-to-Square" class="headerlink" title="Matchsticks to Square"></a>Matchsticks to Square</h4><p>首先这是个分堆问题，把所有的数字用完，分成四堆，每堆之和必须一样。那我想的是用dfs(nums, flag, need, remain)，nums表示数字，flag表示是否使用过，need表示当前堆还要多少数字才能填好，remain表示还有几个堆没有填。其中有一个剪枝：   </p>
+<ol>
+<li>如果对于need是堆之和的时候，都没有找到合适的数字组合，那么可以直接判断这个答案无解。<h4 id="Concatenated-Words"><a href="#Concatenated-Words" class="headerlink" title="Concatenated Words"></a>Concatenated Words</h4>这个是word break的变形。首先word break，采用的是DP。我们判断一个单词能不能被一个word-set组成，实际上是判断or {word[0,i] &amp;&amp; word[i, n] | i = 0 ~ n},就是观察word的子串存不存在set内。brutal force方法是O(n！) 。因为word可以最多由n各子串组成啊。如果我们已经判断word[0~i]，每个word[0~j]，j &lt;=i是不是由set组成，那么对于word[0~i+1]实际上只要判断一遍word[0~k]是true并且word[k ~i+1]也在set中存在即可。TC减少到O(n^2)。  </li>
+</ol>
+
       
     </div>
     <div class="article-info article-info-index">
@@ -183,6 +190,11 @@
 </a>
       
       
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/OJ/">OJ</a>
+	</div>
+
 
       <div class="clearfix"></div>
     </div>
