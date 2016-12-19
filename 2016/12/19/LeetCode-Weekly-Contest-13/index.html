@@ -4,21 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Python编码 | 渊薮</title>
+  <title>LeetCode Weekly Contest 13 | 渊薮</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Python文件处理，IDE和控制台
-可以把python当做一个水池，水池里都是unicode，水池有一个入口，进入源数据，有一个出口，到写入地址">
+  <meta name="description" content="记录自己的学习历程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python编码">
-<meta property="og:url" content="http://yoursite.com/2016/12/02/Python编码/index.html">
+<meta property="og:title" content="LeetCode Weekly Contest 13">
+<meta property="og:url" content="http://yoursite.com/2016/12/19/LeetCode-Weekly-Contest-13/index.html">
 <meta property="og:site_name" content="渊薮">
-<meta property="og:description" content="Python文件处理，IDE和控制台
-可以把python当做一个水池，水池里都是unicode，水池有一个入口，进入源数据，有一个出口，到写入地址">
-<meta property="og:updated_time" content="2016-12-02T02:45:28.000Z">
+<meta property="og:description" content="记录自己的学习历程">
+<meta property="og:updated_time" content="2016-12-19T01:50:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python编码">
-<meta name="twitter:description" content="Python文件处理，IDE和控制台
-可以把python当做一个水池，水池里都是unicode，水池有一个入口，进入源数据，有一个出口，到写入地址">
+<meta name="twitter:title" content="LeetCode Weekly Contest 13">
+<meta name="twitter:description" content="记录自己的学习历程">
   
     <link rel="alternative" href="/atom.xml" title="渊薮" type="application/atom+xml">
   
@@ -158,7 +155,7 @@
 </nav>
 
       <div class="body-wrap">
-        <article id="post-Python编码" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-LeetCode-Weekly-Contest-13" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -168,7 +165,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Python编码
+      LeetCode Weekly Contest 13
     </h1>
   
 
@@ -176,45 +173,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Python文件处理，IDE和控制台</p>
-<p>可以把python当做一个水池，水池里都是unicode，水池有一个入口，进入源数据，有一个出口，到写入地址<br><a id="more"></a></p>
-<p>流程：</p>
-<ol>
-<li><p>读源数据(文件\数据库表)–（2.以某种解码方式解码，转换为unicode）—-》python的unicode池—-(3.以某种编码方式对字符池编码)-》4写入到存储地址（展示时）  </p>
-</li>
-<li><p>源数据有自己的编码方式A      </p>
-</li>
-<li>python的解码方式B    </li>
-<li>python写入时的编码方式C   </li>
-<li>我们对写入后的数据打开时采用的编码方式D。打开方式可以有编辑器，工作台打印，IDE等。  </li>
-<li>ABCD前后不一致而又没有转换得当，就会出现UnDecodeError\UnEncodeError，或者乱码. 所以在python代码过程中，最重要的事情就是规范编码。。</li>
-</ol>
-<p>1.首先要保证代码源文件编码正确<br>py文件默认编码是ASCII，可以在文件头部进行编码声明。声明必须放在第一行或者第二行<br>格式：#-<em>-coding: utf-8-</em>-</p>
-<pre><code>#coding=utf-8
-</code></pre><p>同一个项目中所有源文件头部要统一编码，并且声明的编码要和源文件保存的编码一致。。不然会有错误出现。。。<br>   a.文件保存方式和文件头的编码方式之间的关系<br>    文件的编码方式决定了在该源文件中声明的字符串的编码格式。如果头部声明是#coding=utf-8,但是保存格式是GBK，那么文件中的字符串会被按照GBK编码得到的字节流保存。。。但是python打开是按照头部声明utf-8打开（decode）的。所以会产生unicode error..</p>
-<p>2.其次，在源代码用作处理的硬编码字符串，统一用unicode.<br>这样可以将类型和源文件本身的编码隔离开，</p>
-<h1 id="总之处理顺序：decode-gt-unicode-everywhere-gt-encode"><a href="#总之处理顺序：decode-gt-unicode-everywhere-gt-encode" class="headerlink" title="总之处理顺序：decode -&gt; unicode everywhere -&gt; encode"></a>总之处理顺序：decode -&gt; unicode everywhere -&gt; encode</h1><p>===================================================<br>相关模块<br>获得和设置系统默认编码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>获得  </div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> sys  </div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sys.getdefaultencoding()  </div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment">#设置   </span></div><div class="line">&gt;&gt;&gt;reload(sys)   </div><div class="line">&gt;&gt;sys.setdefaultencoding(<span class="string">'utf-8'</span>)</div></pre></td></tr></table></figure></p>
-<p>注意：在python3中，不存在sys.setdefaultencoding的方法。因为编码问题总可以通过encode和decode问题解决，此方法是走后门的方法。python3直接禁止了该方法。。<br>而且python2中getdefaultencoding()是ascii，python3中得到的是utf-8。。也就是说3的默认编码就是utf-8</p>
-
+        
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2016/12/02/Python编码/" class="archive-article-date">
-  	<time datetime="2016-12-02T01:37:22.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-12-02</time>
+      <a href="/2016/12/19/LeetCode-Weekly-Contest-13/" class="archive-article-date">
+  	<time datetime="2016-12-19T01:50:07.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-12-19</time>
 </a>
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python-编码/">python,编码</a></li></ul>
-	</div>
-
       
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/技术/">技术</a>
-	</div>
-
 
       <div class="clearfix"></div>
     </div>
@@ -224,18 +192,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/12/19/LeetCode-Weekly-Contest-13/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          LeetCode Weekly Contest 13
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/11/27/神神叨叨/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">神神叨叨</div>
+    <a href="/2016/12/02/Python编码/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python编码</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -269,7 +228,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Python编码" data-title="Python编码" data-url="http://yoursite.com/2016/12/02/Python编码/"></div>
+	<div class="ds-thread" data-thread-key="LeetCode-Weekly-Contest-13" data-title="LeetCode Weekly Contest 13" data-url="http://yoursite.com/2016/12/19/LeetCode-Weekly-Contest-13/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
