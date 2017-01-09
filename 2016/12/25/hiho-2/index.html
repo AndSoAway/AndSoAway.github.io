@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>hiho-2 | 渊薮</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="这两天作死没有干实验室的活，看了两篇Hiho的算法。   
+
+KMP  对模式串自己进行构造  
+最长回文子串 O(N)的Manacher算法  
+类型转换的特例：同级别的unsigned和signed">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hiho-2">
+<meta property="og:url" content="http://yoursite.com/2016/12/25/hiho-2/index.html">
+<meta property="og:site_name" content="渊薮">
+<meta property="og:description" content="这两天作死没有干实验室的活，看了两篇Hiho的算法。   
+
+KMP  对模式串自己进行构造  
+最长回文子串 O(N)的Manacher算法  
+类型转换的特例：同级别的unsigned和signed">
+<meta property="og:updated_time" content="2017-01-09T06:41:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hiho-2">
+<meta name="twitter:description" content="这两天作死没有干实验室的活，看了两篇Hiho的算法。   
+
+KMP  对模式串自己进行构造  
+最长回文子串 O(N)的Manacher算法  
+类型转换的特例：同级别的unsigned和signed">
+  
+    <link rel="alternative" href="/atom.xml" title="渊薮" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//favicon.png">
+  
+  <script src="/style.js"></script>
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="http://ww2.sinaimg.cn/small/006kVxTBjw1f8syxg7kh3j30hs0hsq3y.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Qinger</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">个人的足迹</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/categories/随笔">随笔</a></li>
+	        
+				<li><a href="/categories/OJ">OJ</a></li>
+	        
+				<li><a href="/categories/技术">技术</a></li>
+	        
+				<li><a href="/categories/阅读">阅读</a></li>
+	        
+				<li><a href="/categories/写作">写作</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://github.com/AndSoAway" title="github">github</a>
+		        
+					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/xie-yong-qing" title="zhihu">zhihu</a>
+		        
+					<a class="linkedin" target="_blank" href="http://www.linkedin.com/in/%E6%B0%B8%E9%9D%92-%E8%B0%A2-21523ba0?trk=nav_responsive_tab_profile_pic" title="linkedin">linkedin</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">Qinger</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="http://ww2.sinaimg.cn/small/006kVxTBjw1f8syxg7kh3j30hs0hsq3y.jpg" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Qinger</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">个人的足迹</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/categories/随笔">随笔</a></li>
+		        
+					<li><a href="/categories/OJ">OJ</a></li>
+		        
+					<li><a href="/categories/技术">技术</a></li>
+		        
+					<li><a href="/categories/阅读">阅读</a></li>
+		        
+					<li><a href="/categories/写作">写作</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/AndSoAway" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/xie-yong-qing" title="zhihu">zhihu</a>
+			        
+						<a class="linkedin" target="_blank" href="http://www.linkedin.com/in/%E6%B0%B8%E9%9D%92-%E8%B0%A2-21523ba0?trk=nav_responsive_tab_profile_pic" title="linkedin">linkedin</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-hiho-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      hiho-2
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这两天作死没有干实验室的活，看了两篇Hiho的算法。   </p>
+<ol>
+<li>KMP  对模式串自己进行构造  </li>
+<li>最长回文子串 O(N)的Manacher算法  </li>
+<li>类型转换的特例：同级别的unsigned和signed  <a id="more"></a>
+<h3 id="KMP"><a href="#KMP" class="headerlink" title="KMP"></a>KMP</h3>KMP的算法的核心就是，当orig[x] != pattern[i]的时候，找到<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">K = max&#123;k|str(1~k) == str(i-k, i -1)&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这样构成next[i] = K，然后我们就对pattern[next[i] + 1]和orig[x]进行重新判断。这样，复杂度从O(N*M)降到O(M+N)，构建Next数组，本身就是KMP的思想。<br>以前记得笔记<a href="https://note.youdao.com/web/#/file/2208106974F1403BA4E3BF3F55A6CAE0/md/0E0FDC92375F435B9C97F7310CB28628/?search=KMP" target="_blank" rel="external">KMP算法</a>。 但是好像今天才真正的实现<br>了一次正确的代码。</p>
+<h3 id="Manacher算法-最长回文子串"><a href="#Manacher算法-最长回文子串" class="headerlink" title="Manacher算法-最长回文子串"></a>Manacher算法-最长回文子串</h3><p>我感觉hiho网站上并没有说的太清楚。<a href="http://blog.csdn.net/yzl_rex/article/details/7908259" target="_blank" rel="external">Manacher算法-O(N)</a>挺好理解的。<br>实际上，求出最长回文子串，如果用BF方法，是O(N^3)。然后借助DP数组或者按照回文子串中心遍历，仍然是O(N^2)。其中的问题是把每个字母当成回文子串，每次都要从1为半径开始比较。<br>建立一个数组radius[i],记录以i为中心的最长半径回文子串。假设现在以i为中心，然后已经判断的回文子串，在最右边是MaxId,对应的中心是id。那么i关于id的对称点是2<em>id -1. 如果i + radius[2</em>id - 1] &lt; maxId，那么，这个i的半径也就是radius[2*id -1]。因为id为半径的回文子串包括i的子串。不用比较就知道下面不一样了。如果是大于maxId，那么就从maxId开始比较吧。当然，maxId跟id都要更新为i对应的数据。</p>
+<h3 id="转换特例"><a href="#转换特例" class="headerlink" title="转换特例"></a>转换特例</h3><p>首先看一段代码:<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="built_in">string</span> str = <span class="string">"123"</span>;</div><div class="line">	<span class="keyword">int</span> i = <span class="number">-1</span>;</div><div class="line">	<span class="keyword">int</span> len = str.size();</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; (i &lt; str.size()) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; (i &lt; len) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>本来以为结果是1 1，但是实际上是1 0.这是因为第一个比较的时候，把i promote 到unsigned int, 然后i是-1，提升后立刻变成了极大的unsigned int值。<br>具体可以参照：<a href="https://msdn.microsoft.com/zh-cn/library/hh279667.aspx" target="_blank" rel="external">类型转换和类型安全（现代 C++）</a>。其中几句话说的特别好：</p>
+<blockquote>
+<p>编译器不警告有符号和无符号整数类型之间的隐式转换。 因此，建议您避免有符号和无符号之间的转换。 如果您不能避免它们，然后在您的代码添加运行时检查，以检测选定转换值是否大于等于零或小于等于有符号类型的最大值。 此范围内的值将从有符号数传输到无符号数或从无符号数传输到有符号数，而不必经过重新解释。</p>
+</blockquote>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/12/25/hiho-2/" class="archive-article-date">
+  	<time datetime="2016-12-25T08:27:44.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-12-25</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/KMP-回文串-转换-hiho/">KMP,回文串,转换,hiho</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/OJ/">OJ</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/01/09/leetcode-contest-weekly-14/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          leetcode contest weekly 14
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/12/21/hiho-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hiho-1</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="hiho-2" data-title="hiho-2" data-url="http://yoursite.com/2016/12/25/hiho-2/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"andsoaway"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 Qinger
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/KMP-回文串-转换-hiho/" style="font-size: 10px;">KMP,回文串,转换,hiho</a> <a href="/tags/LeetCode/" style="font-size: 10px;">LeetCode</a> <a href="/tags/Leetcode/" style="font-size: 10px;">Leetcode</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/U盘/" style="font-size: 10px;">U盘</a> <a href="/tags/hiho/" style="font-size: 10px;">hiho</a> <a href="/tags/leetcode/" style="font-size: 20px;">leetcode</a> <a href="/tags/python-编码/" style="font-size: 10px;">python,编码</a> <a href="/tags/tree/" style="font-size: 10px;">tree</a> <a href="/tags/写作/" style="font-size: 10px;">写作</a> <a href="/tags/汇编/" style="font-size: 10px;">汇编</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+  			<div class="friends-wrap" id="js-friends">
+  			
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.evercoding.net/">ForEver</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://chenguolong.com/">RanchoChen</a>
+  	        
+  	        </div>
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>
